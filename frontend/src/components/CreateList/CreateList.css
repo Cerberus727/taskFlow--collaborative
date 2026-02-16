@@ -22,7 +22,7 @@
 }
 
 .create-list-form {
-  background: #ebecf0;
+  background: var(--bg-card, #ebecf0);
   padding: 12px;
   border-radius: 8px;
   min-width: 280px;
@@ -33,17 +33,18 @@
 .create-list-form input {
   width: 100%;
   padding: 8px 12px;
-  border: 2px solid #0079bf;
+  border: 2px solid var(--accent-color, #0079bf);
   border-radius: 3px;
   margin-bottom: 8px;
   font-size: 0.875rem;
-  color: #172b4d;
+  color: var(--text-primary, #172b4d);
+  background: var(--bg-card, white);
 }
 
 .create-list-form input:focus {
   outline: none;
-  border-color: #0079bf;
-  box-shadow: 0 0 0 1px #0079bf;
+  border-color: var(--accent-color, #0079bf);
+  box-shadow: 0 0 0 1px var(--accent-color, #0079bf);
 }
 
 .form-actions {
@@ -63,19 +64,19 @@
 }
 
 .btn-add {
-  background: #0079bf;
+  background: var(--accent-color, #0079bf);
   color: #fff;
 }
 
 .btn-add:hover {
-  background: #026aa7;
+  background: var(--accent-hover, #026aa7);
 }
 
 .btn-cancel {
-  background: rgba(9, 30, 66, 0.08);
-  color: #172b4d;
+  background: var(--bg-tertiary, rgba(9, 30, 66, 0.08));
+  color: var(--text-primary, #172b4d);
 }
 
 .btn-cancel:hover {
-  background: rgba(9, 30, 66, 0.13);
+  background: var(--bg-secondary, rgba(9, 30, 66, 0.13));
 }
