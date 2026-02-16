@@ -1,12 +1,12 @@
 .boards-page {
   height: 100%;
-  background: #1d2125;
+  background: var(--bg-primary, #1d2125);
   overflow-y: auto;
 }
 
 .boards-header {
   padding: 24px 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,13 +14,13 @@
 
 .boards-header h1 {
   margin: 0 0 0.25rem 0;
-  color: #b6c2cf;
+  color: var(--text-primary, #b6c2cf);
   font-size: 1.25rem;
 }
 
 .boards-header p {
   margin: 0;
-  color: #9fadbc;
+  color: var(--text-secondary, #9fadbc);
   font-size: 0.9rem;
 }
 
@@ -40,27 +40,27 @@
 }
 
 .btn-primary {
-  background: #579dff;
-  color: #1d2125;
+  background: var(--accent-color, #579dff);
+  color: var(--bg-primary, #1d2125);
 }
 
 .btn-primary:hover {
-  background: #85b8ff;
+  background: var(--accent-hover, #85b8ff);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.1);
-  color: #b6c2cf;
+  background: var(--bg-tertiary, rgba(255, 255, 255, 0.1));
+  color: var(--text-primary, #b6c2cf);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--bg-card, rgba(255, 255, 255, 0.15));
 }
 
 .loading {
   text-align: center;
   padding: 4rem;
-  color: #9fadbc;
+  color: var(--text-secondary, #9fadbc);
   font-size: 1.1rem;
 }
 
@@ -68,7 +68,7 @@
   grid-column: 1 / -1;
   text-align: center;
   padding: 60px 20px;
-  color: #9fadbc;
+  color: var(--text-secondary, #9fadbc);
 }
 
 .empty-state p {
@@ -196,7 +196,7 @@
 }
 
 .modal-content {
-  background: #282e33;
+  background: var(--bg-secondary, #282e33);
   padding: 24px;
   border-radius: 12px;
   width: 90%;
@@ -206,7 +206,7 @@
 
 .modal-content h2 {
   margin: 0 0 1.5rem 0;
-  color: #b6c2cf;
+  color: var(--text-primary, #b6c2cf);
 }
 
 .modal-content .form-group {
@@ -216,7 +216,7 @@
 .modal-content label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #9fadbc;
+  color: var(--text-secondary, #9fadbc);
   font-weight: 500;
 }
 
@@ -224,18 +224,18 @@
 .modal-content textarea {
   width: 100%;
   padding: 0.75rem;
-  background: #22272b;
-  border: 1px solid #3d444d;
+  background: var(--bg-tertiary, #22272b);
+  border: 1px solid var(--border-color, #3d444d);
   border-radius: 6px;
   font-size: 1rem;
   font-family: inherit;
-  color: #b6c2cf;
+  color: var(--text-primary, #b6c2cf);
 }
 
 .modal-content input:focus,
 .modal-content textarea:focus {
   outline: none;
-  border-color: #579dff;
+  border-color: var(--accent-color, #579dff);
 }
 
 .modal-actions {
