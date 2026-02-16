@@ -1,6 +1,6 @@
 .board-page {
   height: calc(100vh - 48px);
-  background: linear-gradient(135deg, #7b68ee 0%, #c678dd 50%, #e06c9f 100%);
+  background: var(--bg-secondary, #282e33);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -171,11 +171,11 @@
 }
 
 .share-btn {
-  background: rgba(255, 255, 255, 0.9) !important;
-  color: #172b4d !important;
+  background: var(--bg-card, white) !important;
+  color: var(--text-primary, #172b4d) !important;
   font-weight: 600;
 }
 
 .share-btn:hover {
-  background: white !important;
+  background: var(--bg-tertiary, white) !important;
 }
