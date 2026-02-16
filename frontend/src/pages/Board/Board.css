@@ -25,7 +25,7 @@
 
 .board-toolbar-left h1 {
   margin: 0;
-  color: #fff;
+  color: var(--navbar-text, #fff);
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -38,7 +38,7 @@
 
 .toolbar-btn {
   background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: var(--navbar-text, #fff);
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
@@ -65,7 +65,7 @@
 
 .toolbar-filter {
   background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: var(--navbar-text, #fff);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 6px 12px;
   border-radius: 4px;

@@ -61,7 +61,7 @@
 .logo-text {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--navbar-text, #fff);
 }
 
 .navbar-center {
@@ -93,7 +93,7 @@
   flex: 1;
   background: transparent;
   border: none;
-  color: #fff;
+  color: var(--navbar-text, #fff);
   font-size: 0.875rem;
   outline: none;
 }
@@ -228,7 +228,7 @@
 }
 
 .sidebar-title {
-  color: #9fadbc;
+  color: var(--text-secondary, #9fadbc);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -250,7 +250,7 @@
   align-items: center;
   gap: 12px;
   padding: 10px 12px;
-  color: #b6c2cf;
+  color: var(--text-secondary, #b6c2cf);
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.15s;
@@ -259,7 +259,7 @@
 
 .menu-item:hover {
   background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  color: var(--text-primary, #fff);
 }
 
 .menu-item.active {
