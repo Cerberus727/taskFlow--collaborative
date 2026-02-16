@@ -94,7 +94,7 @@
 }
 
 .search-result-item:hover {
-  background: #f4f5f7;
+  background: var(--bg-tertiary, #f4f5f7);
 }
 
 .search-result-title {

@@ -84,8 +84,8 @@
 }
 
 .toolbar-filter option {
-  background: #282e33;
-  color: #b6c2cf;
+  background: var(--bg-secondary, #282e33);
+  color: var(--text-primary, #b6c2cf);
 }
 
 .board-content {

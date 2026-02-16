@@ -1,5 +1,5 @@
 .task-card {
-  background: #fff;
+  background: var(--bg-card, #fff);
   border-radius: 6px;
   padding: 8px 12px;
   margin-bottom: 8px;
@@ -10,7 +10,7 @@
 }
 
 .task-card:hover {
-  background: #f4f5f7;
+  background: var(--bg-tertiary, #f4f5f7);
 }
 
 .task-card:hover .task-actions {
@@ -131,12 +131,12 @@
 }
 
 .btn-save {
-  background: #0079bf;
+  background: var(--accent-color, #0079bf);
   color: #fff;
 }
 
 .btn-save:hover {
-  background: #026aa7;
+  background: var(--accent-hover, #026aa7);
 }
 
 .btn-cancel {
@@ -178,8 +178,8 @@
   padding: 2px 6px;
   border-radius: 3px;
   font-size: 11px;
-  background: #dfe1e6;
-  color: #5e6c84;
+  background: var(--border-color, #dfe1e6);
+  color: var(--text-secondary, #5e6c84);
 }
 
 .due-badge.overdue {
@@ -199,8 +199,8 @@
 }
 
 .priority-badge.priority-low {
-  background: #dfe1e6;
-  color: #5e6c84;
+  background: var(--border-color, #dfe1e6);
+  color: var(--text-secondary, #5e6c84);
 }
 
 .priority-badge.priority-medium {

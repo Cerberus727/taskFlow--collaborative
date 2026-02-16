@@ -119,7 +119,7 @@
 }
 
 .label-edit-btn:hover {
-  background: #e4e6ea;
+  background: var(--border-color, #e4e6ea);
 }
 
 .label-delete-btn {
@@ -184,7 +184,7 @@
 }
 
 .create-label-btn {
-  background: #0079bf;
+  background: var(--accent-color, #0079bf);
   color: white;
   border: none;
   padding: 8px 16px;
@@ -195,7 +195,7 @@
 }
 
 .create-label-btn:hover:not(:disabled) {
-  background: #026aa7;
+  background: var(--accent-hover, #026aa7);
 }
 
 .create-label-btn:disabled {

@@ -6,7 +6,7 @@
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  background: white;
+  background: var(--bg-card, white);
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   min-width: 180px;
@@ -38,7 +38,7 @@
 }
 
 .dropdown-item:hover {
-  background: #f4f5f7;
+  background: var(--bg-tertiary, #f4f5f7);
 }
 
 .dropdown-item.danger {
@@ -51,6 +51,6 @@
 
 .dropdown-divider {
   height: 1px;
-  background: #e4e6ea;
+  background: var(--border-color, #e4e6ea);
   margin: 4px 0;
 }

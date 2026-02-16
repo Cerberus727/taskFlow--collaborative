@@ -15,7 +15,11 @@ const getInitialTheme = () => {
   const savedTheme = localStorage.getItem('theme');
   const theme = savedTheme || 'dark';
   // Set theme attribute immediately to prevent flash
-  document.documentElement.setAttribute('data-theme', theme);
+  if (typeof document !== 'undefined') {
+    document.documentElement.setAttribute('data-theme', theme);
+    // Also set it on body as backup
+    document.body.setAttribute('data-theme', theme);
+  }
   return theme;
 };
 
@@ -25,7 +29,11 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     // Update theme attribute and localStorage when theme changes
     document.documentElement.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    
+    // Force reflow to ensure CSS variables are applied
+    void document.body.offsetHeight;
   }, [theme]);
 
   const toggleTheme = () => {

@@ -22,7 +22,7 @@
 }
 
 .confirm-modal {
-  background: white;
+  background: var(--bg-card, white);
   border-radius: 12px;
   padding: 24px;
   max-width: 400px;
@@ -73,12 +73,12 @@
 }
 
 .btn-cancel {
-  background: #f4f5f7;
-  color: #172b4d;
+  background: var(--bg-tertiary, #f4f5f7);
+  color: var(--text-primary, #172b4d);
 }
 
 .btn-cancel:hover {
-  background: #e4e6ea;
+  background: var(--border-color, #e4e6ea);
 }
 
 .btn-danger {

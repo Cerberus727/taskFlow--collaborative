@@ -88,7 +88,7 @@
 }
 
 .invite-btn {
-  background: #0079bf;
+  background: var(--accent-color, #0079bf);
   color: white;
   border: none;
   padding: 10px 16px;
@@ -100,7 +100,7 @@
 }
 
 .invite-btn:hover:not(:disabled) {
-  background: #026aa7;
+  background: var(--accent-hover, #026aa7);
 }
 
 .invite-btn:disabled {
