@@ -22,7 +22,7 @@
 
 .invite-modal-header {
   padding: 16px 20px;
-  border-bottom: 1px solid #dfe1e6;
+  border-bottom: 1px solid var(--border-color, #dfe1e6);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,7 +39,7 @@
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: #42526e;
+  color: var(--text-secondary, #42526e);
   padding: 4px;
   border-radius: 4px;
 }
@@ -67,24 +67,25 @@
 .form-group label {
   font-size: 12px;
   font-weight: 600;
-  color: #5e6c84;
+  color: var(--text-secondary, #5e6c84);
   text-transform: uppercase;
 }
 
 .form-group input,
 .form-group select {
   padding: 10px 12px;
-  border: 1px solid #dfe1e6;
+  border: 1px solid var(--border-color, #dfe1e6);
   border-radius: 4px;
   font-size: 14px;
   color: var(--text-primary, #172b4d);
+  background: var(--bg-card, white);
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #0079bf;
-  box-shadow: 0 0 0 1px #0079bf;
+  border-color: var(--accent-color, #0079bf);
+  box-shadow: 0 0 0 1px var(--accent-color, #0079bf);
 }
 
 .invite-btn {
@@ -128,13 +129,13 @@
 .members-section {
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid #dfe1e6;
+  border-top: 1px solid var(--border-color, #dfe1e6);
 }
 
 .members-section h4 {
   font-size: 12px;
   font-weight: 600;
-  color: #5e6c84;
+  color: var(--text-secondary, #5e6c84);
   text-transform: uppercase;
   margin: 0 0 12px 0;
 }
@@ -189,7 +190,7 @@
 
 .member-email {
   font-size: 12px;
-  color: #5e6c84;
+  color: var(--text-secondary, #5e6c84);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -197,7 +198,7 @@
 
 .member-role {
   font-size: 12px;
-  color: #5e6c84;
+  color: var(--text-secondary, #5e6c84);
   padding: 4px 8px;
   background: rgba(0, 0, 0, 0.04);
   border-radius: 4px;
