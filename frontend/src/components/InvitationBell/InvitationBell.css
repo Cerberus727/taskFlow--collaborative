@@ -1,0 +1,135 @@
+.invitation-bell {
+  position: relative;
+}
+
+.bell-icon {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  position: relative;
+  transition: background 0.15s;
+}
+
+.bell-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.bell-icon .badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #eb5a46;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.invitation-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  min-width: 320px;
+  max-width: 400px;
+  z-index: 100;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.invitation-dropdown h3 {
+  margin: 0;
+  padding: 16px;
+  border-bottom: 1px solid #e4e6ea;
+  color: #172b4d;
+  font-size: 1rem;
+}
+
+.no-invitations {
+  padding: 32px 16px;
+  text-align: center;
+  color: #6b778c;
+  font-size: 0.9rem;
+}
+
+.invitation-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.invitation-item {
+  padding: 16px;
+  border-bottom: 1px solid #f4f5f7;
+}
+
+.invitation-item:last-child {
+  border-bottom: none;
+}
+
+.invitation-info {
+  margin-bottom: 12px;
+}
+
+.invitation-info strong {
+  display: block;
+  color: #172b4d;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.invitation-info span {
+  color: #6b778c;
+  font-size: 0.85rem;
+}
+
+.invitation-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-accept,
+.btn-reject {
+  flex: 1;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-accept {
+  background: #61bd4f;
+  color: white;
+}
+
+.btn-accept:hover {
+  background: #519839;
+}
+
+.btn-reject {
+  background: #f4f5f7;
+  color: #172b4d;
+}
+
+.btn-reject:hover {
+  background: #e4e6ea;
+}

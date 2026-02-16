@@ -1,0 +1,155 @@
+.login-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+.login-modal {
+  background: #282e33;
+  padding: 32px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.2s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #9fadbc;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.login-modal h2 {
+  color: #b6c2cf;
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.modal-subtitle {
+  color: #9fadbc;
+  margin: 0 0 24px 0;
+  font-size: 0.9rem;
+}
+
+.modal-error {
+  background: rgba(235, 90, 70, 0.15);
+  color: #eb5a46;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.modal-form-group {
+  margin-bottom: 16px;
+}
+
+.modal-form-group label {
+  display: block;
+  color: #9fadbc;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.modal-form-group input {
+  width: 100%;
+  padding: 12px;
+  background: #22272b;
+  border: 1px solid #3d444d;
+  border-radius: 6px;
+  color: #b6c2cf;
+  font-size: 1rem;
+  transition: border-color 0.15s;
+}
+
+.modal-form-group input:focus {
+  outline: none;
+  border-color: #579dff;
+}
+
+.modal-form-group input::placeholder {
+  color: #6b778c;
+}
+
+.modal-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #579dff;
+  color: #1d2125;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+
+.modal-submit-btn:hover {
+  background: #85b8ff;
+}
+
+.modal-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-switch {
+  text-align: center;
+  margin-top: 20px;
+  color: #9fadbc;
+  font-size: 0.9rem;
+}
+
+.modal-switch button {
+  background: transparent;
+  border: none;
+  color: #579dff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.modal-switch button:hover {
+  color: #85b8ff;
+  text-decoration: underline;
+}
