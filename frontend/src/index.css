@@ -6,6 +6,7 @@
   --bg-card: #22272b;
   --navbar-bg: #1d2125;
   --navbar-text: #ffffff;
+  --toolbar-overlay: rgba(0, 0, 0, 0.15);
   --text-primary: #ffffff;
   --text-secondary: #b6c2cf;
   --text-heading: #ffffff;
@@ -22,6 +23,7 @@
   --bg-card: #22272b;
   --navbar-bg: #1d2125;
   --navbar-text: #ffffff;
+  --toolbar-overlay: rgba(0, 0, 0, 0.15);
   --text-primary: #ffffff;
   --text-secondary: #b6c2cf;
   --text-heading: #ffffff;
@@ -38,6 +40,7 @@
   --bg-card: #ffffff;
   --navbar-bg: #026aa7;
   --navbar-text: #ffffff;
+  --toolbar-overlay: rgba(0, 0, 0, 0.5);
   --text-primary: #172b4d;
   --text-secondary: #5e6c84;
   --text-heading: #091e42;
