@@ -37,6 +37,7 @@ function Board() {
   const [showInviteModal, setShowInviteModal] = useState(false);
   const [showLabelManager, setShowLabelManager] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [taskFilter, setTaskFilter] = useState('all'); // 'all', 'dueToday', 'overdue'
   const { byId, currentBoardId, lists, tasks, loading } = useSelector((state) => state.board);
   const { user } = useSelector((state) => state.auth);
   const currentBoard = currentBoardId ? byId[currentBoardId] : null;
@@ -218,6 +219,30 @@ function Board() {
     }
   };
 
+  // Filter tasks based on selected filter
+  const filterTasks = (taskList) => {
+    if (taskFilter === 'all') return taskList;
+    
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    
+    return taskList.filter((task) => {
+      if (!task.dueDate) return false;
+      const dueDate = new Date(task.dueDate);
+      dueDate.setHours(0, 0, 0, 0);
+      
+      if (taskFilter === 'dueToday') {
+        return dueDate >= today && dueDate < tomorrow;
+      }
+      if (taskFilter === 'overdue') {
+        return dueDate < today;
+      }
+      return true;
+    });
+  };
+
   if (loading || !currentBoard) {
     return (
       <div className="board-page">
@@ -238,6 +263,15 @@ function Board() {
             >
               {currentBoard.isStarred ? '⭐' : '☆'} Star
             </button>
+            <select 
+              className="toolbar-filter" 
+              value={taskFilter} 
+              onChange={(e) => setTaskFilter(e.target.value)}
+            >
+              <option value="all">All Tasks</option>
+              <option value="dueToday">📅 Due Today</option>
+              <option value="overdue">🔴 Overdue</option>
+            </select>
             <button className="toolbar-btn" onClick={() => setShowLabelManager(true)}>
               🏷️ Labels
             </button>
@@ -288,11 +322,12 @@ function Board() {
               {lists.allIds.map((listId, index) => {
                 const list = lists.byId[listId];
                 const listTasks = list.tasks.map(taskId => tasks.byId[taskId]).filter(Boolean);
+                const filteredTasks = filterTasks(listTasks);
                 return (
                   <BoardList
                     key={listId}
                     list={list}
-                    tasks={listTasks}
+                    tasks={filteredTasks}
                     index={index}
                     boardId={currentBoard.id}
                   />

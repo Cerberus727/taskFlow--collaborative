@@ -1,7 +1,7 @@
 import prisma from '../../config/db.js';
 import activityService from '../activity/activity.service.js';
 
-const createTask = async ({ listId, title, description, userId }) => {
+const createTask = async ({ listId, title, description, priority, dueDate, userId }) => {
   const list = await prisma.list.findFirst({
     where: {
       id: listId,
@@ -34,6 +34,8 @@ const createTask = async ({ listId, title, description, userId }) => {
       description,
       listId,
       position,
+      priority: priority || 'MEDIUM',
+      dueDate: dueDate ? new Date(dueDate) : null,
     },
     include: {
       assignee: {
@@ -420,7 +422,7 @@ const assignTask = async (taskId, userId, assigneeId) => {
   return { ...updatedTask, boardId: task.list.board.id };
 };
 
-const updateTaskDetails = async (taskId, userId, { title, description, dueDate, labels }) => {
+const updateTaskDetails = async (taskId, userId, { title, description, dueDate, priority, labels }) => {
   const task = await prisma.task.findFirst({
     where: {
       id: taskId,
@@ -449,6 +451,7 @@ const updateTaskDetails = async (taskId, userId, { title, description, dueDate, 
   if (title !== undefined) updateData.title = title;
   if (description !== undefined) updateData.description = description;
   if (dueDate !== undefined) updateData.dueDate = dueDate ? new Date(dueDate) : null;
+  if (priority !== undefined) updateData.priority = priority;
   if (labels !== undefined) updateData.labels = labels;
 
   const updatedTask = await prisma.task.update({

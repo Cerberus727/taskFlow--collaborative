@@ -50,6 +50,41 @@
   margin-bottom: 24px;
 }
 
+.section-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-toolbar h2 {
+  margin: 0;
+  color: #b6c2cf;
+  font-size: 1.25rem;
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.1);
+  color: #b6c2cf;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  min-width: 200px;
+}
+
+.search-input::placeholder {
+  color: #9fadbc;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #579dff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
 .members-section h2 {
   margin: 0 0 20px 0;
   color: #b6c2cf;
@@ -104,6 +139,32 @@
 .member-email {
   color: #9fadbc;
   font-size: 0.875rem;
+  margin-bottom: 4px;
+}
+
+.member-stats {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(87, 157, 255, 0.15);
+  color: #579dff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.no-results {
+  text-align: center;
+  padding: 32px;
+  color: #9fadbc;
+  font-size: 0.95rem;
 }
 
 .member-role {

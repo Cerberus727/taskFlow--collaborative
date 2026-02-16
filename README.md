@@ -47,10 +47,16 @@ For detailed setup instructions, see **[SETUP.md](SETUP.md)**.
 ✅ Real-time collaboration (multi-user updates without refresh)  
 ✅ Drag-and-drop tasks between lists  
 ✅ Board access control (owner/admin/member roles)  
-✅ Task assignments, due dates, and labels  
+✅ Task assignments, due dates, priorities, and labels  
+✅ Priority levels (Low, Medium, High) with color coding  
+✅ Set due dates and priorities during task creation  
+✅ Filter tasks by status (All, Due Today, Overdue)  
+✅ Light/Dark theme toggle with persistence  
 ✅ Activity history and audit logs  
 ✅ Search and filter tasks  
+✅ Enhanced member management with task counts  
 ✅ Member invitations via email  
+✅ Comments on tasks with real-time updates  
 ✅ Star/favorite boards  
 
 ## Project Structure
@@ -104,9 +110,11 @@ Technical trade-offs explained: why JWT over sessions, PostgreSQL over MongoDB, 
 1. Register an account (any email works, even `test@example.com`)
 2. Create a board called "My Project"
 3. Add lists: "To Do", "In Progress", "Done"
-4. Create some tasks and drag them between lists
-5. Open the same board in another browser window
-6. Make changes in one window and watch them appear instantly in the other
+4. Create tasks with priorities and due dates
+5. Try the light/dark theme toggle in the navbar
+6. Filter tasks by "Due Today" or "Overdue"
+7. Open the same board in another browser window
+8. Add comments and make changes - watch real-time updates!
 
 ## Development
 
@@ -197,6 +205,14 @@ Found a bug or want to add a feature?
 6. Push: `git push origin feature/awesome-feature`
 7. Open a Pull Request
 
+## Recent Updates
+
+✨ **Task Creation Enhanced** - Set priority and due date when creating tasks  
+✨ **Priority System** - Color-coded priority levels (Low/Medium/High)  
+✨ **Theme Support** - Toggle between light and dark modes  
+✨ **Smart Filters** - Filter by All Tasks, Due Today, or Overdue  
+✨ **Member Insights** - See task counts per board member  
+
 ## Future Ideas
 
 - [ ] File attachments on tasks
@@ -209,6 +225,8 @@ Found a bug or want to add a feature?
 - [ ] Custom fields
 - [ ] Webhooks for integrations
 - [ ] Two-factor authentication
+- [ ] Bulk task operations
+- [ ] Task templates
 
 ## License
 

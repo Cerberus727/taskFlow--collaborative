@@ -3,7 +3,7 @@ import { getIO } from '../../config/socket.js';
 
 export const createTask = async (req, res, next) => {
   try {
-    const { listId, title, description } = req.body;
+    const { listId, title, description, priority, dueDate } = req.body;
 
     if (!listId || !title) {
       res.status(400);
@@ -14,6 +14,8 @@ export const createTask = async (req, res, next) => {
       listId,
       title,
       description,
+      priority,
+      dueDate,
       userId: req.user.id,
     });
 
@@ -29,12 +31,13 @@ export const createTask = async (req, res, next) => {
 export const updateTask = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { title, description, dueDate, labels } = req.body;
+    const { title, description, dueDate, priority, labels } = req.body;
 
     const task = await taskService.updateTaskDetails(id, req.user.id, {
       title,
       description,
       dueDate,
+      priority,
       labels,
     });
 

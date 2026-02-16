@@ -6,7 +6,12 @@ import './CreateTask.css';
 
 function CreateTask({ listId }) {
   const [isAdding, setIsAdding] = useState(false);
-  const [taskData, setTaskData] = useState({ title: '', description: '' });
+  const [taskData, setTaskData] = useState({ 
+    title: '', 
+    description: '',
+    priority: 'MEDIUM',
+    dueDate: ''
+  });
   const { token } = useSelector((state) => state.auth);
   const { requireAuth } = useAuth();
 
@@ -26,7 +31,7 @@ function CreateTask({ listId }) {
 
     try {
       await dispatch(createTask({ listId, ...taskData })).unwrap();
-      setTaskData({ title: '', description: '' });
+      setTaskData({ title: '', description: '', priority: 'MEDIUM', dueDate: '' });
       setIsAdding(false);
     } catch (error) {
       console.error('Failed to create task:', error);
@@ -59,6 +64,29 @@ function CreateTask({ listId }) {
           }
           rows="2"
         />
+        <div className="task-properties">
+          <div className="property-field">
+            <label>Priority</label>
+            <select
+              value={taskData.priority}
+              onChange={(e) => setTaskData({ ...taskData, priority: e.target.value })}
+              className={`priority-select priority-${taskData.priority.toLowerCase()}`}
+            >
+              <option value="LOW">Low</option>
+              <option value="MEDIUM">Medium</option>
+              <option value="HIGH">High</option>
+            </select>
+          </div>
+          <div className="property-field">
+            <label>Due Date</label>
+            <input
+              type="date"
+              value={taskData.dueDate}
+              onChange={(e) => setTaskData({ ...taskData, dueDate: e.target.value })}
+              className="due-date-input"
+            />
+          </div>
+        </div>
         <div className="form-actions">
           <button type="submit" className="btn-add">
             Add
@@ -67,7 +95,7 @@ function CreateTask({ listId }) {
             type="button"
             onClick={() => {
               setIsAdding(false);
-              setTaskData({ title: '', description: '' });
+              setTaskData({ title: '', description: '', priority: 'MEDIUM', dueDate: '' });
             }}
             className="btn-cancel"
           >

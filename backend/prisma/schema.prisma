@@ -106,6 +106,7 @@ model Task {
   position    Int
   assigneeId  String?
   dueDate     DateTime?
+  priority    String    @default("MEDIUM") // LOW, MEDIUM, HIGH
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   deletedAt   DateTime?
@@ -122,6 +123,7 @@ model Task {
   @@index([title])
   @@index([deletedAt])
   @@index([dueDate])
+  @@index([priority])
 }
 
 model Label {

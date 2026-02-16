@@ -2,7 +2,7 @@
   width: 100%;
   padding: 8px;
   background: transparent;
-  color: #5e6c84;
+  color: var(--text-secondary, #5e6c84);
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -12,12 +12,12 @@
 }
 
 .add-task-btn:hover {
-  background: rgba(9, 30, 66, 0.08);
-  color: #172b4d;
+  background: var(--bg-tertiary, rgba(9, 30, 66, 0.08));
+  color: var(--text-primary, #172b4d);
 }
 
 .create-task-form {
-  background: #fff;
+  background: var(--bg-card, #fff);
   padding: 8px;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
@@ -27,23 +27,79 @@
 .create-task-form textarea {
   width: 100%;
   padding: 8px 12px;
-  border: 2px solid #0079bf;
+  border: 2px solid var(--accent-color, #0079bf);
   border-radius: 3px;
   margin-bottom: 8px;
   font-family: inherit;
   font-size: 0.875rem;
-  color: #172b4d;
+  color: var(--text-primary, #172b4d);
+  background: var(--bg-card, white);
 }
 
 .create-task-form input:focus,
 .create-task-form textarea:focus {
   outline: none;
-  border-color: #0079bf;
-  box-shadow: 0 0 0 1px #0079bf;
+  border-color: var(--accent-color, #0079bf);
+  box-shadow: 0 0 0 1px var(--accent-color, #0079bf);
 }
 
 .create-task-form textarea {
   resize: vertical;
+}
+
+.task-properties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.property-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.property-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary, #5e6c84);
+  text-transform: uppercase;
+}
+
+.priority-select,
+.due-date-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color, #dfe1e6);
+  border-radius: 3px;
+  font-size: 0.875rem;
+  background: var(--bg-card, white);
+  color: var(--text-primary, #172b4d);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.priority-select:focus,
+.due-date-input:focus {
+  outline: none;
+  border-color: var(--accent-color, #0079bf);
+  box-shadow: 0 0 0 1px var(--accent-color, #0079bf);
+}
+
+.priority-select.priority-low {
+  background: var(--bg-tertiary, #f4f5f7);
+  color: var(--text-secondary, #5e6c84);
+}
+
+.priority-select.priority-medium {
+  background: var(--bg-tertiary, #e3f2fd);
+  color: var(--accent-color, #0079bf);
+}
+
+.priority-select.priority-high {
+  background: var(--bg-tertiary, #ffebe6);
+  color: #b04632;
 }
 
 .form-actions {
@@ -63,19 +119,19 @@
 }
 
 .btn-add {
-  background: #0079bf;
+  background: var(--accent-color, #0079bf);
   color: #fff;
 }
 
 .btn-add:hover {
-  background: #026aa7;
+  background: var(--accent-hover, #026aa7);
 }
 
 .btn-cancel {
-  background: rgba(9, 30, 66, 0.08);
-  color: #172b4d;
+  background: var(--bg-tertiary, rgba(9, 30, 66, 0.08));
+  color: var(--text-primary, #172b4d);
 }
 
 .btn-cancel:hover {
-  background: rgba(9, 30, 66, 0.13);
+  background: var(--bg-card, rgba(9, 30, 66, 0.13));
 }

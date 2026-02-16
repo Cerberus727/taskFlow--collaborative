@@ -101,6 +101,11 @@ function TaskCard({ task, index, boardId }) {
                 {task.description && <p>{task.description}</p>}
               </div>
               <div className="task-badges">
+                {task.priority && task.priority !== 'MEDIUM' && (
+                  <span className={`priority-badge priority-${task.priority.toLowerCase()}`}>
+                    {task.priority === 'HIGH' ? '🔴' : '⚪'} {task.priority}
+                  </span>
+                )}
                 {task.dueDate && (
                   <span className={`due-badge ${isOverdue ? 'overdue' : ''}`}>
                     🕐 {new Date(task.dueDate).toLocaleDateString()}

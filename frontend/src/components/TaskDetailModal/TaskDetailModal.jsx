@@ -30,6 +30,7 @@ function TaskDetailModal({ task, boardId, onClose }) {
   const [newComment, setNewComment] = useState('');
   const [showLabelsMenu, setShowLabelsMenu] = useState(false);
   const [dueDate, setDueDate] = useState(task.dueDate ? task.dueDate.slice(0, 10) : '');
+  const [priority, setPriority] = useState(task.priority || 'MEDIUM');
 
   const titleRef = useRef(null);
   const descRef = useRef(null);
@@ -83,6 +84,12 @@ function TaskDetailModal({ task, boardId, onClose }) {
     const dueDateValue = value ? new Date(value).toISOString() : null;
     dispatch(updateTaskRealtime({ id: task.id, dueDate: dueDateValue }));
     dispatch(updateTask({ id: task.id, dueDate: dueDateValue }));
+  };
+
+  const handlePriorityChange = (value) => {
+    setPriority(value);
+    dispatch(updateTaskRealtime({ id: task.id, priority: value }));
+    dispatch(updateTask({ id: task.id, priority: value }));
   };
 
   const handleAddComment = () => {
@@ -311,6 +318,34 @@ function TaskDetailModal({ task, boardId, onClose }) {
                 onChange={(e) => handleDueDateChange(e.target.value)}
               />
               {isOverdue && <span className="overdue-badge">Overdue</span>}
+            </div>
+            <div className="sidebar-item">
+              <button className="sidebar-btn">
+                🎯 Priority
+              </button>
+              <select
+                className={`priority-select priority-${priority.toLowerCase()}`}
+                value={priority}
+                onChange={(e) => handlePriorityChange(e.target.value)}
+              >
+                <option value="LOW">⚪ Low</option>
+                <option value="MEDIUM">🔵 Medium</option>
+                <option value="HIGH">🔴 High</option>
+              </select>
+            </div>
+            <div className="sidebar-item">
+              <button className="sidebar-btn">
+                🎯 Priority
+              </button>
+              <select
+                className={`priority-select priority-${priority.toLowerCase()}`}
+                value={priority}
+                onChange={(e) => handlePriorityChange(e.target.value)}
+              >
+                <option value="LOW">Low</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="HIGH">High</option>
+              </select>
             </div>
 
             <h4>Actions</h4>

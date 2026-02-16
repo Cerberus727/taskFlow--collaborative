@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { logout } from '../../store/slices/authSlice';
 import { useAuth } from '../../context/AuthContext';
+import { useTheme } from '../../context/ThemeContext';
 import SearchBox from '../SearchBox';
 import InvitationBell from '../InvitationBell/InvitationBell';
 import './Layout.css';
@@ -11,6 +12,7 @@ function Layout({ children }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const { user, token } = useSelector((state) => state.auth);
   const { requireAuth } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -54,6 +56,9 @@ function Layout({ children }) {
           {token ? (
             <>
               <InvitationBell />
+              <button className="theme-toggle-btn" onClick={toggleTheme} title="Toggle theme">
+                {theme === 'dark' ? '☀️' : '🌙'}
+              </button>
               <button className="create-btn" onClick={() => navigate('/boards')}>
                 Create
               </button>
@@ -67,9 +72,14 @@ function Layout({ children }) {
               </div>
             </>
           ) : (
-            <button className="login-btn" onClick={handleLoginClick}>
-              Login
-            </button>
+            <>
+              <button className="theme-toggle-btn" onClick={toggleTheme} title="Toggle theme">
+                {theme === 'dark' ? '☀️' : '🌙'}
+              </button>
+              <button className="login-btn" onClick={handleLoginClick}>
+                Login
+              </button>
+            </>
           )}
         </div>
       </nav>

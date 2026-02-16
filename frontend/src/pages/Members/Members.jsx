@@ -12,12 +12,34 @@ function Members() {
   const navigate = useNavigate();
   const [showRemoveModal, setShowRemoveModal] = useState(false);
   const [selectedMember, setSelectedMember] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const { currentBoardId, byId, loading } = useSelector((state) => state.board);
   const currentBoard = currentBoardId ? byId[currentBoardId] : null;
   const { user } = useSelector((state) => state.auth);
   const members = currentBoard?.members || [];
   const isOwner = currentBoard?.ownerId === user?.id;
+
+  // Filter members based on search query
+  const filteredMembers = members.filter((member) => {
+    const memberUser = member.user || {};
+    const name = memberUser.name?.toLowerCase() || '';
+    const email = memberUser.email?.toLowerCase() || '';
+    const query = searchQuery.toLowerCase();
+    return name.includes(query) || email.includes(query);
+  });
+
+  // Count tasks assigned to each member
+  const getMemberTaskCount = (userId) => {
+    if (!currentBoard?.lists) return 0;
+    let count = 0;
+    currentBoard.lists.forEach((list) => {
+      if (list.tasks) {
+        count += list.tasks.filter((task) => task.assigneeId === userId && !task.deletedAt).length;
+      }
+    });
+    return count;
+  };
 
   useEffect(() => {
     if (!boardId) return;
@@ -80,11 +102,21 @@ function Members() {
 
       <div className="members-content">
         <section className="members-section">
-          <h2>Members ({members.length})</h2>
+          <div className="section-toolbar">
+            <h2>Members ({filteredMembers.length})</h2>
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search members..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
           <div className="members-list">
-            {members.map((member) => {
+            {filteredMembers.map((member) => {
               const memberUser = member.user || {};
               const isBoardOwner = member.userId === currentBoard.ownerId;
+              const taskCount = getMemberTaskCount(member.userId);
               
               return (
                 <div key={member.id} className="member-card">
@@ -94,6 +126,9 @@ function Members() {
                   <div className="member-info">
                     <div className="member-name">{memberUser.name || 'Unknown'}</div>
                     <div className="member-email">{memberUser.email || ''}</div>
+                    <div className="member-stats">
+                      <span className="stat-badge">📋 {taskCount} task{taskCount !== 1 ? 's' : ''}</span>
+                    </div>
                   </div>
                   <div className="member-role">
                     {isOwner && !isBoardOwner ? (
@@ -122,6 +157,9 @@ function Members() {
                 </div>
               );
             })}
+            {filteredMembers.length === 0 && (
+              <div className="no-results">No members found</div>
+            )}
           </div>
         </section>
       </div>
