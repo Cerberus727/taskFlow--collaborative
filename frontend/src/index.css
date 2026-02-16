@@ -7,6 +7,8 @@
   --navbar-bg: #1d2125;
   --navbar-text: #ffffff;
   --toolbar-overlay: rgba(0, 0, 0, 0.15);
+  --input-bg: #ffffff;
+  --input-text: #172b4d;
   --text-primary: #ffffff;
   --text-secondary: #b6c2cf;
   --text-heading: #ffffff;
@@ -24,6 +26,8 @@
   --navbar-bg: #1d2125;
   --navbar-text: #ffffff;
   --toolbar-overlay: rgba(0, 0, 0, 0.15);
+  --input-bg: #ffffff;
+  --input-text: #172b4d;
   --text-primary: #ffffff;
   --text-secondary: #b6c2cf;
   --text-heading: #ffffff;
@@ -41,6 +45,8 @@
   --navbar-bg: #026aa7;
   --navbar-text: #ffffff;
   --toolbar-overlay: rgba(0, 0, 0, 0.5);
+  --input-bg: #ffffff;
+  --input-text: #172b4d;
   --text-primary: #172b4d;
   --text-secondary: #5e6c84;
   --text-heading: #091e42;

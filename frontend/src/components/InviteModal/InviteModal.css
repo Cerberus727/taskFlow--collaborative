@@ -12,7 +12,7 @@
 }
 
 .invite-modal {
-  background: white;
+  background: var(--bg-card, white);
   border-radius: 8px;
   width: 100%;
   max-width: 420px;
@@ -67,7 +67,7 @@
 .form-group label {
   font-size: 12px;
   font-weight: 600;
-  color: var(--text-secondary, #5e6c84);
+  color: var(--text-heading, #5e6c84);
   text-transform: uppercase;
 }
 
@@ -77,8 +77,8 @@
   border: 1px solid var(--border-color, #dfe1e6);
   border-radius: 4px;
   font-size: 14px;
-  color: var(--text-primary, #172b4d);
-  background: var(--bg-card, white);
+  color: var(--input-text, #172b4d);
+  background: var(--input-bg, white);
 }
 
 .form-group input:focus,
@@ -128,14 +128,17 @@
 
 .members-section {
   margin-top: 20px;
-  padding-top: 20px;
+  padding: 16px;
   border-top: 1px solid var(--border-color, #dfe1e6);
+  background: var(--bg-primary, transparent);
+  border-radius: 0 0 8px 8px;
+  margin: 20px -20px -20px -20px;
 }
 
 .members-section h4 {
   font-size: 12px;
   font-weight: 600;
-  color: var(--text-secondary, #5e6c84);
+  color: var(--text-heading, #5e6c84);
   text-transform: uppercase;
   margin: 0 0 12px 0;
 }
