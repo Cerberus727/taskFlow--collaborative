@@ -38,7 +38,7 @@
 
 .list-header h3 {
   margin: 0;
-  color: #172b4d;
+  color: var(--text-heading, #172b4d);
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.4;
@@ -64,7 +64,7 @@
 
 .list-menu-btn:hover {
   background: rgba(9, 30, 66, 0.08);
-  color: #172b4d;
+  color: var(--text-primary, #172b4d);
 }
 
 .task-list {

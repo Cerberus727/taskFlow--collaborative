@@ -29,7 +29,7 @@
   border: none;
   background: transparent;
   font-size: 14px;
-  color: #172b4d;
+  color: var(--text-primary, #172b4d);
   outline: none;
   min-width: 0;
 }
@@ -100,7 +100,7 @@
 .search-result-title {
   font-size: 14px;
   font-weight: 500;
-  color: #172b4d;
+  color: var(--text-heading, #172b4d);
   margin: 0 0 4px 0;
 }
 

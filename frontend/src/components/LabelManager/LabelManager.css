@@ -50,7 +50,7 @@
 .label-manager-header h3 {
   margin: 0;
   font-size: 14px;
-  color: #172b4d;
+  color: var(--text-heading, #172b4d);
 }
 
 .label-manager-close {

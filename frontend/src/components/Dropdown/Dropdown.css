@@ -30,7 +30,7 @@
   padding: 10px 16px;
   cursor: pointer;
   transition: background 0.15s;
-  color: #172b4d;
+  color: var(--text-primary, #172b4d);
   font-size: 0.9rem;
   display: flex;
   align-items: center;

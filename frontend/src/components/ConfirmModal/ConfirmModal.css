@@ -45,12 +45,12 @@
 .confirm-modal h2 {
   margin: 0 0 12px 0;
   font-size: 1.25rem;
-  color: #172b4d;
+  color: var(--text-heading, #172b4d);
 }
 
 .confirm-modal p {
   margin: 0 0 24px 0;
-  color: #5e6c84;
+  color: var(--text-secondary, #5e6c84);
   line-height: 1.5;
 }
 
